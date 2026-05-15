@@ -43,13 +43,13 @@ H~A~: **pH effects abalone shell growth.**
 ```{r}
 #| label: abalone-data-cleaning
 
-# 
-abalone_clean <- abalone  
-  # 
-  clean_names()  
-  # 
-  select(mean_p_h, change_in_area_mm2_d_1_25)  
-  # 
+#  creating new object 
+abalone_clean <- abalone  |> 
+  # cleaning up column names to remove spaces
+  clean_names()  |> 
+  # selecting specific columns of interest
+  select(mean_p_h, change_in_area_mm2_d_1_25)  |> 
+  # renaming the columns to be more concise
   rename(mean_ph = mean_p_h, 
          change_in_area = change_in_area_mm2_d_1_25)
 ```
