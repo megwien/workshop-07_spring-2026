@@ -114,7 +114,7 @@ plot(temperature_model)
 
 ```{r}
 #| label: temperature-model-summary
-
+# summarizing the temperature model
 summary(temperature_model)
 
 ```
@@ -175,7 +175,7 @@ ggplot(data = sonadora_sum,
 
 ```{r}
 #| label: temperature-model-table
-
+# presenting the model in a table
 as_flextable(temperature_model)
 ```
 
