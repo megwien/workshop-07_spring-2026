@@ -60,12 +60,13 @@ Don't forget to look at your data! Use `View(abalone_clean)` in the _Console_.
 
 ```{r}
 #| label: abalone-scatterplot
+#| warning: false
 
-# 
-ggplot(data = abalone_clean, # 
-       aes(x = mean_ph, # 
-           y = change_in_area)) 
-  # 
+# base layer: ggplot
+ggplot(data = abalone_clean, # selecting cleaned data set
+       aes(x = mean_ph, # setting x and y axis to be mean ph and change in area respectively
+           y = change_in_area)) +
+  # first layer: point graph
   geom_point(size = 4,
              stroke = 1,
              fill = "firebrick4",
@@ -74,7 +75,7 @@ ggplot(data = abalone_clean, #
 
 Where does the missing value come from?  
 
-**insert response here**  
+**the missing values comes from one pair of tanks where the pH sensor failed.**  
 
 Don't forget to turn your warnings off either in the individual code chunk or in the YAML at the top of the file.
 
