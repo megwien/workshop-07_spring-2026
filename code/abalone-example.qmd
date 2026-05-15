@@ -32,9 +32,9 @@ Data from Hamilton et al. 2022. "Integrated multi-trophic aquaculture mitigates 
 
 ## a. Questions and hypotheses
 
-Question: How does pH predict abalone growth (measured in change in shell surface area per day, mm^-2^ d^-1^)?  
+Question: How does pH predict abalone growth (measured in change in shell surface area per day, mm^-2^ d^-1^)?
 
-H~0~: **pH has no effect on abalone shell growth.**  
+H~0~: **pH has no effect on abalone shell growth.**
 
 H~A~: **pH effects abalone shell growth.**
 
@@ -54,7 +54,7 @@ abalone_clean <- abalone  |>
          change_in_area = change_in_area_mm2_d_1_25)
 ```
 
-Don't forget to look at your data! Use `View(abalone_clean)` in the _Console_.
+Don't forget to look at your data! Use `View(abalone_clean)` in the *Console*.
 
 ## c. Exploratory data visualization
 
@@ -73,9 +73,9 @@ ggplot(data = abalone_clean, # selecting cleaned data set
              shape = 21)
 ```
 
-Where does the missing value come from?  
+Where does the missing value come from?
 
-**the missing values comes from one pair of tanks where the pH sensor failed.**  
+**the missing values comes from one pair of tanks where the pH sensor failed.**
 
 Don't forget to turn your warnings off either in the individual code chunk or in the YAML at the top of the file.
 
@@ -111,11 +111,11 @@ summary(abalone_model)
 
 ```
 
-What is the slope estimate (with standard error?)  
+What is the slope estimate (with standard error?)
 
 $\beta_1$: 2.98 $\pm$ 0.76
 
-What is the intercept estimate (with standard error?)  
+What is the intercept estimate (with standard error?)
 
 $\beta_0$:-18.50 $\pm$: 6.16
 
@@ -134,29 +134,29 @@ abalone_preds <- ggpredict(
 abalone_preds
 ```
 
-Look at the column names using `colnames(abalone_preds)` in the Console.  
+Look at the column names using `colnames(abalone_preds)` in the Console.
 
-What are the column names?  
+What are the column names?
 
-`x`.`predicted`, `std.error`, `conf.low`, `conf.high` (not going to worry about `group` right now) 
+`x`.`predicted`, `std.error`, `conf.low`, `conf.high` (not going to worry about `group` right now)
 
-Look at the actual object (by clicking on it in Environment).  
+Look at the actual object (by clicking on it in Environment).
 
-Look at the class of the object using `class(abalone_preds)` in the Console.  
+Look at the class of the object using `class(abalone_preds)` in the Console.
 
-What is this type of object?  
+What is this type of object?
 
 It is a ggeffects output and a regular data frame.
 
-View `abalone_preds` like a data frame. 
+View `abalone_preds` like a data frame.
 
-### Why generate model predictions?  
+### Why generate model predictions?
 
-This dataset does not include any _actual_ observations of abalone growth at pH = 8.  
+This dataset does not include any *actual* observations of abalone growth at pH = 8.
 
-However, the model can tell us a _prediction_ for what abalone growth could be if pH = 8 based on the existing data.  
+However, the model can tell us a *prediction* for what abalone growth could be if pH = 8 based on the existing data.
 
-Figure out what abalone growth the model would _predict_ at pH = 8.
+Figure out what abalone growth the model would *predict* at pH = 8.
 
 ```{r}
 #| label: model-predictions-8
@@ -168,9 +168,9 @@ ggpredict(
 )
 ```
 
-How would you interpret this?  
+How would you interpret this?
 
-**insert your response here**
+**At a mean ph of 8 the midel predicts a change in abalone shell surface area (mm^2/day) to be 5.36 [95% CI: 5.08, 5.64]**
 
 ### Visualizing model predictions and data
 
